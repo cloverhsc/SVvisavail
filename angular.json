@@ -30,9 +30,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/visavail/visavail.css"
             ],
-            "scripts": []
+            "allowedCommonJsDependencies": [
+              "visavail"
+            ],
+            "scripts": [
+              "node_modules/visavail/visavail.min.js"
+            ]
           },
           "configurations": {
             "production": {
