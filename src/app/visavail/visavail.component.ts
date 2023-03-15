@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import * as visavail from "visavail";
+import * as d3 from "d3";
 import { fakeData } from './fake-data';
-
 
 
 @Component({
@@ -22,7 +22,7 @@ export class VisavailComponent implements OnInit {
       id_div_container: "alarm_bar_container",
       id_div_graph: "alarm_bar_div",
       date_in_utc: false,
-      width: document.getElementById("alarm_bar_div")?.offsetWidth,
+      width: document.getElementById("alarm_bar_div")?.clientWidth,
       line_spacing: 24,
       tooltip: {
         height: 18,
@@ -36,11 +36,6 @@ export class VisavailComponent implements OnInit {
         console.log(d[0].toISOString());
         console.log(d[1]);
         console.log(d[2].toISOString());
-      },
-      categories: {
-        ok: { "color": '#34BFA3', class: 'ok' },
-        warning: { "color": '#FFCC00', class: 'warning' },
-        critical: { "color": '#F24F7C', class: 'critical' },
       },
     };
     this.chart['dataset'] = fakeData;
